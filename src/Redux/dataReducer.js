@@ -1,6 +1,6 @@
 import data from '../Data/data.json';
 const stateData = {
-    data : data,
+    dataChair : data.array,
 };
 const dataReducer = ( state = stateData, action ) => {
     return {...state};

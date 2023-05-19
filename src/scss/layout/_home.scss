@@ -1,0 +1,126 @@
+.hp {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 3em 0;
+    .r {
+        display: grid;
+        grid-template-columns: repeat( 12 ,1fr );
+        width: 100%;
+        padding: 0 20px;
+        .c8 {
+            grid-column: 1 / span 8;
+            .cc8 {
+                display: block;
+                h1 {
+                    display: grid;
+                    grid-template-columns: repeat( 10 ,1fr);
+                    width: 100%;
+                    padding: 0;
+                    margin: 20px auto;
+                    span {
+                        grid-column: 1 / span 1;
+                        display: block;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0 auto
+                    };
+                    p {
+                        grid-column: 2 / span 8;
+                        display: block;
+                        width: 100%;
+                        padding: 10px 0;
+                        margin-left: 0%;
+                        margin-right: auto;
+                        @include styleText( $fs-3, $fw-bold, $tt-uppercase, $ta-center, 3px);
+                        color: $color-white;
+                        background-color:  $color-gray-700;
+                    };
+                };
+                .lrc {
+                    display: block;
+                    width: 100%;
+                    padding: 10px 0;
+                    margin: 0 auto;
+                    background-color: $color-gray-500;
+                    border: 2px solid $color-gray-900;
+                    border-radius: 10px;
+                    .irc {
+                        display: grid;
+                        grid-template-columns: repeat(10 ,1fr);
+                        align-items: center;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0 auto;
+                        .ro {
+                            grid-column: 1 / span 1;
+                            p {
+                                @include styleText( $fs-3, $fw-bolder, $tt-uppercase, $ta-center, 1px);
+                                color: $color-blueGray-800;
+                            };
+                        };
+                        .rc {
+                            grid-column: 2 / span 8;
+                            display: grid;
+                            grid-template-columns: repeat( 17 , 1fr );
+                            gap: 2px;
+                            align-items: center;
+                            padding: 5px 0;
+                            .b {
+                                display: block;
+                                width: 100%;
+                                padding: 0;
+                                margin: 0 auto;
+                                button {
+                                    display: block;
+                                    width: 100%;
+                                    margin: 0 auto;
+                                    @include styleText( $fs-1, $fw-bold, $tt-uppercase, $ta-center, 1px);
+                                    color: $color-white;
+                                    border: 1px solid $color-white;
+                                    transition: all .4s;
+                                    &:hover {
+                                        color: $color-white;
+                                        background-color: $color-pink-500;
+                                        border: 1px solid $color-white;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+            .ts {
+                display: block;
+                width: 100%;
+                padding: 10px 20px;
+                margin:  2em auto;
+                background-color: $color-blueGray-600;
+                ul {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding: 20px 0;
+                    margin: 0 auto;
+                    background-color: $color-blueGray-500;
+                    border-radius: 10px;
+                    li {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        span {
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            margin: 0 20px;
+                        };
+                        p {
+                            @include styleText( $fs-2, $fw-lighter, $tt-capitalize, $ta-center, 1px);
+                            @include colorText( $color-gray-900, $color-transparent, 1px, $color-transparent, unset);
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
