@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { selectTicket } from '../Redux/Actions/userActions';
 
 function RowChair(props) {
     const renderRowChair = (array) => {
@@ -7,14 +8,15 @@ function RowChair(props) {
             return (
                 <div className='irc' key={index}>
                     <div className='ro'><p>{object.row}</p></div>
-                    <div className='rc'>{renderChair(object.rowChair)}</div>
+                    <div className='rc'>{renderChair(object)}</div>
                 </div>
             );
         });
     };
     const renderChair = (array) => {
-        return array.map((object, index) => {
-            return <div className='b' key={index}><button onClick={() => {}} className={object.color}>{object.chair}</button></div>
+        let row = array.row;
+        return array.rowChair.map((object, index) => {
+            return <div className='b' key={index}><button onClick={() => {props.selectCinemaTicket(row,object)}} className={object.color}>{object.chair}</button></div>
         });
     };
     return (
@@ -30,14 +32,9 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        selectCinemaTicket : (flag, object) => {
-            let action = {
-                type : "selectCinemaTicket",
-                flag,
-                object
-            };
-            dispatch(action);
-        }
+        selectCinemaTicket : (row ,object) => {
+            dispatch(selectTicket(row,object));
+        },
     };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(RowChair);

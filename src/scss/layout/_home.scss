@@ -122,5 +122,46 @@
                 };
             };
         };
+        .c4 {
+            grid-column: 9 / span 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            table {
+                border: 2px solid $color-black;
+                thead {
+                    background-color: $color-black;
+                    tr {
+                        th {
+                            padding: 10px 20px;
+                            @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-center, 1px);
+                            color: $color-white;
+                            border: 1px solid $color-gray-900;
+                        };
+                    };
+                };
+                tbody {
+                    background-color: $color-white;
+                    tr {
+                        td {
+                            padding: 10px 20px;
+                            @include styleText( $fs-1, $fw-bold, $tt-capitalize, $ta-center, 1px);
+                            border: 1px solid $color-gray-800;
+                        };
+                    };
+                };
+                tfoot {
+                    background-color: $color-white;
+                    tr {
+                        th {
+                            padding: 10px 20px;
+                            @include styleText( $fs-1, $fw-bold, $tt-capitalize, $ta-center, 1px);
+                            border: 1px solid $color-gray-800;
+                        };
+                    };
+                };
+            };
+        };
     };
 };

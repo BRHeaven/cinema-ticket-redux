@@ -2,7 +2,26 @@ import '../css/main.css';
 import React from 'react';
 import RowChair from './RowChair';
 import { connect } from 'react-redux';
-function Home() {
+import { removeTicker } from '../Redux/Actions/userActions';
+function Home(props) {
+  const renderCart = () => {
+    return props.selectCinema.cart.map((object, index) => {
+      return <tr key={index}>
+        <td>{object.chair}</td>
+        <td>{object.type}</td>
+        <td>{object.price.toLocaleString()}</td>
+        <td><button onClick={() => {props.removeCinemaTicket(object)}}>X</button></td>
+      </tr>
+    });
+  };
+  const renderTotalPrice = () => {
+    let array = props.selectCinema.cart;
+    let price = 0;
+    for ( let i = 0; i < array.length; i++ ) {
+      price += array[i].price;
+    };
+    return price.toLocaleString();
+  };
   return (
     <section className='hp'>
         <div className="r">
@@ -21,10 +40,50 @@ function Home() {
                 </ul>
               </div>
             </div>
-            <div className='c4'></div>
+            <div className='c4'>
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      <p>chair</p>
+                    </th>
+                    <th>
+                      <p>class</p>
+                    </th>
+                    <th>
+                      <p>price</p>
+                    </th>
+                    <th>
+                      <p></p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {renderCart()}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th colSpan={2}></th>
+                    <th>{renderTotalPrice()}</th>
+                    <th></th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
         </div>
     </section>
   )
 };
-
-export default connect(null,null)(Home);
+const mapStateToProps = state => {
+  return {
+      selectCinema : state.user
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+      removeCinemaTicket : (ticket) => {
+        dispatch(removeTicker(ticket));
+      }
+  };
+};
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

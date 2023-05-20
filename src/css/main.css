@@ -176,6 +176,53 @@ ul {
   border: 1px solid transparent;
   border-radius: unset;
 }
+.hp .r .c4 {
+  grid-column: 9/span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.hp .r .c4 table {
+  border: 2px solid #000000;
+}
+.hp .r .c4 table thead {
+  background-color: #000000;
+}
+.hp .r .c4 table thead tr th {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  border: 1px solid #212121;
+}
+.hp .r .c4 table tbody {
+  background-color: #FFFFFF;
+}
+.hp .r .c4 table tbody tr td {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 1px solid #424242;
+}
+.hp .r .c4 table tfoot {
+  background-color: #FFFFFF;
+}
+.hp .r .c4 table tfoot tr th {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 1px solid #424242;
+}
 
 html, body {
   background-color: #455A64;
